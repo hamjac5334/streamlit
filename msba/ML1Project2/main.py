@@ -121,6 +121,17 @@ with st.spinner("Training model..."):
     m = build_model(bookings, k)
 y_train, y_test = m["y_train"], m["y_test"]
 
+st.caption("Early-warning model for ride cancellations. Flag a booking soon after it's made so a "
+           "dispatcher can confirm it, line up a backup driver, or add it to the check-in call list. "
+           "KNN (k = 21) trained on 8,000 Bangalore bookings from 2013.")
+
+s1, s2, s3, s4 = st.columns(4)
+s1.metric("Base cancellation rate", f"{y_train.mean():.1%}")
+s2.metric("High tier cancels", "32%", help="6+ of 21 neighbors cancelled (test set)")
+s3.metric("Elevated tier cancels", "15%", help="3-5 of 21 neighbors cancelled (test set)")
+s4.metric("Top two tiers catch", "62%", help="of all cancellations, from 23% of bookings")
+st.divider()
+
 
 def tier_of(n):
     return np.where(n >= high_min, "High", np.where(n >= elevated_min, "Elevated", "Standard"))
