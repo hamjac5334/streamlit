@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
+from pathlib import Path
 from sklearn.linear_model import LogisticRegression
 
 st.set_page_config(page_title="LinkedIn User Predictor", layout="centered")
