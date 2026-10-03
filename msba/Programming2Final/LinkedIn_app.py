@@ -25,7 +25,7 @@ def clean_sm(x):
 
 @st.cache_data
 def load_data():
-       s = pd.read_csv(Path(__file__).parent / "social_media_usage.csv")
+    s = pd.read_csv(Path(__file__).parent / "social_media_usage.csv")
     ss = pd.DataFrame({
         "sm_li": clean_sm(s["web1h"]),
         "income": np.where(s["income"] <= 9, s["income"], np.nan),
