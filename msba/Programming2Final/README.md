@@ -4,7 +4,7 @@ Built an interactive Streamlit app that uses a logistic regression model to pred
 
 **Live app:** [LinkedIn User Predictor]([ADD STREAMLIT LINK])
 
-**Code:** [`app.py`]([ADD REPO LINK])
+**Code:** [`app.py`]([[Repo](https://github.com/hamjac5334/streamlit/tree/main/msba/Programming2Final)])
 
 A marketing team enters a person's profile (income, education, age, gender, marital status, and parental status) and gets back a classification, the probability that person uses LinkedIn, and how that probability compares to the average survey respondent. Two "what-if" charts hold the profile fixed and vary only age or only income, which shows which audiences are most worth targeting.
 
